@@ -1,19 +1,20 @@
-failed_conversation,conversation_length,number_of_user_words,feedback_Q1,feedback_Q2,feedback_Q3
-False,26,392,extremely helpful,I like its objective approach clarifying the picture and show it to me from an outside perspective. tips and guidance were also helpful!,thanks!
-False,26,155,it helped!,I dont know what else to ask :) it was fine,good night!
-False,42,541,very satisfactory,extremely helpful,I really liked the structure and how the context has been summarized. 
-False,24,153,it helped!,I dont know what else to ask :) it was fine,
-False,40,330,,,
-False,34,579,,,
-False,42,570,Very satisfactory,"Yes, ConsciousGPT helped me a lot in practicing difficult conversations",nothing
-False,26,201,,,
-False,17,83,,,
-False,28,359,Very satisfactory.,Extremely helpful.,Nothing comes to mind right now.
-False,22,170,,,
-False,14,223,,,
-False,24,180,,,
-False,44,603,extremely helpful,Feels that interaction was very conversational and I'm very glad to have done it.,
-False,36,306,very satisfactory,,
-False,28,239,very satisfactory,extremely helpful,I was impressed how quickly the responses came and that they understood the problem right away
-False,34,129,satisfactory,helped quite a bit,your questions or observations seem to be a bit too long
-False,16,300,,,
+conversation_id,conversation_length,user_words,api_errors,feedback_Q1,feedback_Q2,feedback_Q3,overall_feedback
+0,1044,16492,53,,,,
+1,18,364,3,very satisfactory,extremely helpful,I like its objective approach clarifying the picture and show it to me from an outside perspective. tips and guidance were also helpful!,5.0
+2,18,138,0,very satisfactory,it helped!,I dont know what else to ask :) it was fine,5.0
+3,28,492,0,very satisfactory,extremely helpful,I really liked the structure and how the context has been summarized. ,5.0
+4,18,138,0,very satisfactory,it helped!,I dont know what else to ask :) it was fine,5.0
+5,40,330,0,,,,
+6,34,579,0,,,,
+7,36,557,0,Very satisfactory,"Yes, ConsciousGPT helped me a lot in practicing difficult conversations",nothing,5.0
+8,26,201,0,,,,
+9,16,78,2,,,,
+10,20,345,0,I enjoy these conversations.,Very satisfactory.,Extremely helpful.,5.0
+11,22,170,0,,,,
+12,14,223,0,,,,
+13,24,180,0,,,,
+14,38,585,0,very satisfactory,extremely helpful,Feels that interaction was very conversational and I'm very glad to have done it.,5.0
+15,34,304,0,very satisfactory,,,5.0
+16,22,219,0,very satisfactory,extremely helpful,I was impressed how quickly the responses came and that they understood the problem right away,5.0
+17,26,112,0,satisfactory,helped quite a bit,your questions or observations seem to be a bit too long,3.0
+18,16,300,0,,,,
