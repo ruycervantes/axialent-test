@@ -253,8 +253,6 @@ with col1:
 
 
 with col2:
-    vert_space = '<div style="padding: 20px 5px;"></div>'
-    st.markdown(vert_space, unsafe_allow_html=True)
     st.markdown(
         "As most of feedback we have seen is either 5.0 or no feedback, we can not tell for sure in which cases LLM works great and in which fails."
     )
@@ -355,8 +353,6 @@ with col1:
     st.plotly_chart(fig_style)
 
 with col2:
-    vert_space = '<div style="padding: 20px 5px;"></div>'
-    st.markdown(vert_space, unsafe_allow_html=True)
     st.markdown(
         "User didn't use emotional or formal form of communication. They prefer to be assertive or analytical for solving their problems."
     )
@@ -381,8 +377,6 @@ with col1:
 
 
 with col2:
-    vert_space = '<div style="padding: 20px 5px;"></div>'
-    st.markdown(vert_space, unsafe_allow_html=True)
     st.markdown(
         "We could see that users uses different emotion tones of communication, however most frequently emotions are frustrated or anxious."
     )
