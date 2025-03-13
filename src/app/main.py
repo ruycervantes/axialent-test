@@ -11,10 +11,10 @@ dataset_path = "data/dataset.jsonl"
 
 dataset = load_dataset(dataset_path)
 
-st.title("Axialent Test Challeng task")
+st.title("Axialent Test Challenge task")
 
 st.markdown(
-    "In this work I tried to analyse dataset with user communications with usage of LLM and langchain for finding patterns and insights."
+    "In this work I analysed dataset with user communications with usage of LLM and langchain for finding patterns and insights."
 )
 
 st.subheader("Dataset description")
@@ -95,7 +95,7 @@ with col2:
         "Here I visualised average conversation length by feedback score (not including messages about feedback)."
     )
     st.markdown(
-        "As we can see, there is no correlation between feedback score and conversation length - as number of questions is predefined in the prompt, conversation length stays the same."
+        "As we can see, there is no correlation between feedback score and conversation length - as number of questions is predefined in the prompt, conversation length stays mostly the same."
     )
 
 
@@ -145,11 +145,13 @@ with col1:
 
 with col2:
     st.markdown(
-        "Although we have only one feedback for 3.0, we can see that user rated 5.0 tends to user more words with same amount of messages."
+        "Although we have only one feedback for 3.0, we can see that user rated dialog with 5.0 tends to user more words with same amount of messages."
     )
+
     st.markdown(
-        "Thus, we should encourage users to use more words, explaining their difficult situations - possibly if user do not use more words, ask him more questions or directly ask him to explain his situation more detailed and deeper."
+        "One hypothesis is that the more in detail the user explains the problem and their feelings, the better the advice. In that case we could improve the quality by asking more questions or directly ask him to explain his situation more detailed and deeper."
     )
+
     st.markdown("Hovewer more data is needed to make any conclusions.")
 
 
@@ -198,11 +200,11 @@ st.markdown(
     "I used structured prompting to extract main topic and situation from user conversation: I listed all possible difficult topics and situations that can happen during work and asked model to select one of them (with temprature 0.0 for deterministic output)."
 )
 
-col1, col2 = st.columns(spec=[0.5, 0.5])
+col1, col2 = st.columns(spec=[0.65, 0.35])
 topics_df = pd.read_csv("data/topics_df.csv")
 
 with col1:
-    st.dataframe(topics_df[["main_topic", "situation"]], hide_index=True, height=350)
+    st.dataframe(topics_df[["conversation_id", "main_topic", "situation"]], hide_index=True, height=350)
 
 
 with col2:
@@ -287,8 +289,13 @@ fig.update_layout(title_text="Topic Distribution: All Conversations vs With Feed
 
 st.plotly_chart(fig)
 st.markdown(
-    "As we can see, out of 4 conversation about Career Development, only one was given feedback (however by statics 50% of people left feedback). This is possible that LLM fails to analyse situactions about career and user stops in the middle of conversation."
+    "As we can see, out of 4 conversation about Career Development, only one was given feedback (however by statics 50% of people left feedback). This is possible that LLM fails to analyse situactions about careers and user stops in the middle of conversation."
 )
+
+st.markdown(
+    "Also, we can see that for all project management conversation user successfully went to the end of conversation and left feedback - which is good sign that LLM is able to handle this topic."
+)
+
 st.markdown("For other topics we do not see any correlation between feedback and topic.")
 
 st.subheader("Communication Style Analysis")
@@ -399,3 +406,45 @@ st.markdown("""
 - as we have multiple questions and complex prompt structure, we could use frameworks like langgraph for storing states and states transitions. It could reduce context, eliminate model hallucinations and improve performance.
 - build RAG system for finding semantic correlations in the text. We could seach specific conversation using keywords for analysis of what user was thinking and feeling.
 """)
+
+
+## Technological Details
+st.subheader("Technological Details")
+
+col1, col2 = st.columns(spec=[0.5, 0.5])
+
+with col1:
+    st.markdown("### Current Stack")
+    st.markdown("""
+    - **Streamlit**: Web application framework for data visualization and analysis
+    - **Pandas**: Data manipulation and analysis
+    - **Plotly**: Interactive data visualization library
+    - **LangChain**: Framework for developing LLM applications
+        - Structured prompting for data extraction
+    - **Large Language Models (LLM)**: Used with pair with **Langchain**:
+        - Topic classification
+        - Communication style analysis
+        - Emotional tone detection
+    """)
+
+with col2:
+    st.markdown("### Future Technology Stack")
+    st.markdown("""
+    - **LangGraph**: 
+        - State management for complex conversations
+        - Improved context handling
+        - Better prompt management
+    
+    - **RAG (Retrieval Augmented Generation)**:
+        - Vector databases for semantic search
+        - Efficient conversation retrieval
+        - Pattern recognition in user communications
+    
+    - **Advanced Analytics**:
+        - Natural Language Processing (NLP) for deeper text analysis
+        - Sentiment analysis models
+        - Conversation flow analysis:
+            - Message sequence patterns
+            - Dropout point detection
+            - Question-response effectiveness
+    """)
